@@ -1,7 +1,7 @@
-Alter Table  bdm.NewsLetterTemplates
-Add OfferType smallint
+--Alter Table  bdm.NewsLetterTemplates
+--Add OfferType smallint
 
-Update bdm.NewsLetterTemplates SET OfferType =1
+--Update bdm.NewsLetterTemplates SET OfferType =1
 
-ALTER TABLE bdm.NewsLetterTemplates
- ALTER COLUMN OfferType smallint Not NULL
+--ALTER TABLE bdm.NewsLetterTemplates
+--ALTER COLUMN OfferType smallint Not NULL
