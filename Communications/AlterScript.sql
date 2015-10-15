@@ -1,5 +1,5 @@
---Alter Table  bdm.NewsLetterTemplates
---Add OfferType smallint
+Alter Table  bdm.NewsLetterItems
+Add TemplateSection varchar(250)
 
 --Update bdm.NewsLetterTemplates SET OfferType =1
 
