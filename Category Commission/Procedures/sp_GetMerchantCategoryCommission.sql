@@ -1,5 +1,6 @@
 
-CREATE PROCEDURE sp_GetMerchantCategoryCommission
+
+CREATE PROCEDURE [bdm].[sp_GetMerchantCategoryCommission]
     @MerchantCommissionID INT ,
     @AgencyID INT ,
     @MerchantID INT ,
@@ -67,10 +68,10 @@ AS
                        FROM     [bdm].[MerchantCategoryCommission] CC
                                 INNER JOIN bdm.Merchants M ON CC.MerchantID = M.MerchantID
                                 INNER JOIN bdm.Categories C ON cc.CategoryID = C.CategoryID
-                       WHERE    CC.MerchantCommissionID IN ( 0,
-                                                             @MerchantCommissionID )
-                                AND M.MerchantID IN ( 0, @MerchantID )
-                                AND C.CategoryID IN ( 0, @CategoryID )
+                       WHERE    @MerchantCommissionID IN ( 0,
+                                                           CC.MerchantCommissionID )
+                                AND @MerchantID IN ( 0, M.MerchantID )
+                                AND @CategoryID IN ( 0, C.CategoryID )
                      )
             SELECT  MerchantCommissionID ,
                     AgencyID ,
@@ -95,4 +96,3 @@ AS
                        )
 
     END
-GO
